@@ -1,0 +1,36 @@
+version: '3'
+services:
+  db:
+    image: postgres:10.20
+    environment:
+      - PGPORT=54321
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=civil
+      - POSTGRES_INITDB_ARGS="--encoding=UTF8"
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    user: postgres
+#    expose:
+#      - 54321
+    ports:
+      - "54321:54321"
+    # volumes:
+    #   - /pg-data:/var/lib/postgresql/data
+    #   - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      # - /var/lib/postgresql/data
+        # - /var/lib/postgresql/data
+        # - ./psql/migrate.sql:/docker-entrypoint-initdb.d/migrate.sql
+      # - /var/lib/postgresql/data
+
+  # flyway:
+  #   build: ../flyway/civil
+  #   depends_on:
+  #     - db
+  civil_backend:
+    build: .
+    ports:
+      - "8090:8090"
+    depends_on:
+      - "db"
+# volumes:
+#   postgres-data:

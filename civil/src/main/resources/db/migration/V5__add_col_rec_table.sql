@@ -1,0 +1,2 @@
+ALTER TABLE opposing_recommendations
+ADD COLUMN is_sub_topic boolean;

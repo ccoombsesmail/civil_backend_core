@@ -1,0 +1,17 @@
+.bloop
+.bsp
+.metals
+.vscode
+.idea
+.bloop
+/frontend/node_modules
+/frontend/package-lock.json
+target
+
+/civil/.bloop
+/civil/civil-0.1-SNAPSHOT.jar
+/civil/civil-assembly-0.1.0.jar
+/civil/civil-
+/civil/output.txt
+/civil/target
+
