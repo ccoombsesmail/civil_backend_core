@@ -17,3 +17,6 @@
 ./target
 
 civil/civil-assembly-0.2.0.jar
+
+.env
+/env
